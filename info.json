@@ -1,0 +1,15 @@
+{
+  "name": "thinking_brain",
+  "title": "Thinking Brain",
+  "description": "thinking_brain descr",
+  "author": "snouz",
+  "homepage": "https://github.com/snouz/thinking_brain",
+  "version": "0.0.1",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base",
+    "space-age"
+  ],
+  "space_travel_required": true,
+  "spoiling_required": true
+}
