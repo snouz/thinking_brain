@@ -88,18 +88,27 @@ data:extend({
     crafting_categories = {"thinkingbrain"},
     fast_replaceable_group = "thinking-brain",
     max_health = 600,
-    corpse = "biochamber-remnants",
+    corpse = "thinking-brain-remnants",
     dying_explosion = "biochamber-explosion",
     icon_draw_specification = {shift = {0, 0.1}},
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
-    circuit_connector = circuit_connector_definitions["biochamber"],
+    circuit_connector = circuit_connector_definitions.create_vector
+    (
+      universal_connector_template,
+      {
+        { variation = 17, main_offset = util.by_pixel( -40, 21), shadow_offset = util.by_pixel( -32, 25), show_shadow = false },
+        { variation = 17, main_offset = util.by_pixel( -40, 21), shadow_offset = util.by_pixel( -32, 25), show_shadow = false },
+        { variation = 17, main_offset = util.by_pixel( -40, 21), shadow_offset = util.by_pixel( -32, 25), show_shadow = false },
+        { variation = 17, main_offset = util.by_pixel( -40, 21), shadow_offset = util.by_pixel( -32, 25), show_shadow = false },
+      }
+    ),
     collision_box = {{-1.7, -1.7}, {1.7, 1.7}},
     selection_box = {{-2, -2}, {2, 2}},
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 0.4,
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    effect_receiver = { base_effect = { productivity = 0.6 }},
+    effect_receiver = { base_effect = { productivity = 0.7 }},
 
     --graphics_set = require("__space-age__.prototypes.entity.biochamber-pictures").graphics_set,
 
@@ -520,5 +529,34 @@ data:extend({
       orientation_to_variation = true
     },
     production_health_effect = nil
+  },
+
+
+  {
+    type = "corpse",
+    name = "thinking-brain-remnants",
+    icon = "__base__/graphics/icons/wooden-chest.png",
+    hidden_in_factoriopedia = true,
+    flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
+    subgroup = "production-machine-remnants",
+    order = "a-a-a",
+    selection_box = {{-2, -2}, {2, 2}},
+    tile_width = 4,
+    tile_height = 4,
+    selectable_in_game = false,
+    time_before_removed = 60 * 60 * 15, -- 15 minutes
+    expires = false,
+    final_render_layer = "remnants",
+    --remove_on_tile_placement = false,
+    animation =
+    {
+      filename = "__thinking_brain__/graphics/entity/thinking_brain/thinking_brain-remnants.png",
+      line_length = 1,
+      width = 500,
+      height = 350,
+      direction_count = 1,
+      shift = util.by_pixel(0, vert_shift),
+      scale = 0.5
+    }
   },
 })
