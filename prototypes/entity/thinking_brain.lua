@@ -76,7 +76,7 @@ local thinkingbrain_off_animation_layers =
 
 
 local vert_shift = -4
-local anim_speed = 0.1
+local anim_speed = 1
 
 data:extend({
   {
@@ -418,14 +418,26 @@ data:extend({
 
 
     impact_category = "metal-large",
-    open_sound = {filename = "__base__/sound/open-close/fluid-open.ogg", volume = 0.55},
-    close_sound = {filename = "__base__/sound/open-close/fluid-close.ogg", volume = 0.54},
+    open_sound = {filename = "__base__/sound/open-close/roboport-open.ogg", volume = 0.5},
+    close_sound = {filename = "__base__/sound/open-close/roboport-close.ogg", volume = 0.4},
     working_sound =
     {
-      sound = {filename = "__space-age__/sound/entity/biochamber/biochamber-loop.ogg", volume = 0.4},
+      sound = {filename = "__thinking_brain__/sound/thinking_brain/water_loop.ogg", volume = 0.5},
       max_sounds_per_prototype = 3,
       fade_in_ticks = 4,
-      fade_out_ticks = 20
+      fade_out_ticks = 20,
+      sound_accents = {
+        {
+          sound = {filename = "__thinking_brain__/sound/thinking_brain/accent1.ogg", volume = 0.5},
+          frame = 27,
+          play_for_working_visualisation = "anim"
+        },
+        {
+          sound = {filename = "__thinking_brain__/sound/thinking_brain/accent2.ogg", volume = 0.3},
+          frame = 37,
+          play_for_working_visualisation = "anim"
+        },
+      },
     },
     crafting_speed = 2,
     energy_source =
@@ -435,14 +447,13 @@ data:extend({
       effectivity = 1,
       burner_usage = "nutrients",
       fuel_inventory_size = 1,
-      emissions_per_minute = { pollution = 1 },
-      light_flicker = require("__space-age__.prototypes.entity.biochamber-pictures").light_flicker
+      emissions_per_minute = { pollution = 2 },
     },
-    energy_usage = "500kW",
+    energy_usage = "4000kW",
     heating_energy = "100kW",
     
     fluid_boxes_off_when_no_fluid_recipe = true,
-    fluid_boxes =
+    --[[fluid_boxes =
     {
       {
         production_type = "input",
@@ -512,7 +523,7 @@ data:extend({
           }
         }
       }
-    },
+    },]]
     water_reflection =
     {
       pictures =
