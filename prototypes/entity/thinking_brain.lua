@@ -82,7 +82,7 @@ data:extend({
   {
     type = "assembling-machine",
     name = "thinking-brain",
-    icon = "__space-age__/graphics/icons/biochamber.png",
+    icon = "__thinking_brain__/graphics/icons/thinking_brain_icon.png",
     flags = {"placeable-neutral","placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "thinking-brain"},
     crafting_categories = {"thinkingbrain"},
@@ -546,7 +546,7 @@ data:extend({
   {
     type = "corpse",
     name = "thinking-brain-remnants",
-    icon = "__base__/graphics/icons/wooden-chest.png",
+    icon = "__thinking_brain__/graphics/icons/thinking_brain_icon.png",
     hidden_in_factoriopedia = true,
     flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
     subgroup = "production-machine-remnants",
