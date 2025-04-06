@@ -9,6 +9,6 @@ Recipes it can do:
 ![recipes](https://i.imgur.com/cfs7ktT.png)
 
 # Credits:
-The synaptic assembler entity contains graphics from Hurricane046, as seen here:
+The synaptic assembler entity contains graphics from Hurricane046, and a few other images, as seen here:
 
 ![makingof](https://i.imgur.com/sFzTkn8.png)
