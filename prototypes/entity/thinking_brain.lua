@@ -109,19 +109,6 @@ data:extend({
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     effect_receiver = { base_effect = { productivity = 0.7 }},
-
-    --graphics_set = require("__space-age__.prototypes.entity.biochamber-pictures").graphics_set,
-
-
-
-
-
-
-
-
-
-
-
     graphics_set =
     {
       animation_progress = 0.15,
@@ -440,7 +427,7 @@ data:extend({
       },
     },
     crafting_speed = 2,
-    energy_source =
+    --[[energy_source =
     {
       type = "burner",
       fuel_categories = {"nutrients"},
@@ -448,6 +435,12 @@ data:extend({
       burner_usage = "nutrients",
       fuel_inventory_size = 1,
       emissions_per_minute = { pollution = 2 },
+    },]]
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = { pollution = 2 }
     },
     energy_usage = "4000kW",
     heating_energy = "100kW",

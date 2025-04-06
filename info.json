@@ -1,10 +1,10 @@
 {
   "name": "thinking_brain",
-  "title": "Thinking Brain",
-  "description": "thinking_brain descr",
+  "title": "Synaptic assembler",
+  "description": "The synaptic assembler is a balanced building to craft specific recipes very efficiently.",
   "author": "snouz",
   "homepage": "https://github.com/snouz/thinking_brain",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "factorio_version": "2.0",
   "dependencies": [
     "base",
