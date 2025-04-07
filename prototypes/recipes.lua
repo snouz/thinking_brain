@@ -23,7 +23,7 @@ data:extend({
     },
     results = {{type = "item", name = "thinking-brain", amount = 1}},
     allow_productivity = false,
-    enabled = true,
+    enabled = false,
   },
 })
 

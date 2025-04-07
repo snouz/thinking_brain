@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+Date: 2025-04-07
+  Bugfixes:
+    - Fixed recipe unlocked by default
+    - Fixed start crash if some modded characters didn't declare crafting_categories 
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 2025-04-06
   Changes:
