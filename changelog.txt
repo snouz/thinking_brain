@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 2025-04-06
+  Changes:
+    - Assembler recipe: 4 -> 10 seconds, +150 water and +9 fish
+    - Images losslessly optimized
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2025-04-06
+  Changes:
+    - Added recipes:
+    - _ personal-roboport-equipment
+    - _ personal-roboport-mk2-equipment
+    - _ rocket-turret
+    - _ chemical-science-pack (blue)
+    - _ production-science-pack (purple)
+    - _ flying-robot-frame
+    - _ lab
+    - Removed recipe:
+    - _ automation-science-pack (red)
+  Bugfixes:
+    - Fixed recipes not being craftable by hand anymore
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2025-04-06
   Locale:

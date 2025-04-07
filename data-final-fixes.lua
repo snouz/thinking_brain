@@ -33,6 +33,16 @@ local function make_recipe_category(recipe, cat_name, new_assembling_machine)
           end
       end
     end
+    for _, char in pairs(data.raw["character"]) do
+      for _, category in pairs(char.crafting_categories) do
+          if category == original_recipe_cat then
+            if not find_intable(char.crafting_categories, new_cat_name) then
+              table.insert(char.crafting_categories, new_cat_name)
+            end
+            break
+          end
+      end
+    end
     if not data.raw["recipe-category"][new_cat_name] then
       data:extend({{ type = "recipe-category", name = new_cat_name }})
     end
@@ -54,14 +64,15 @@ if mods["Moshine"] then
   make_recipe_category("processing-tile", catname, "thinking-brain")
   make_recipe_category("long-stack-inserter", catname, "thinking-brain")
   make_recipe_category("rail-minimal", catname, "thinking-brain")
-
 end
 
 make_recipe_category("logistic-robot", catname, "thinking-brain")
 make_recipe_category("construction-robot", catname, "thinking-brain")
+make_recipe_category("flying-robot-frame", catname, "thinking-brain")
 make_recipe_category("roboport", catname, "thinking-brain")
 
 make_recipe_category("spidertron", catname, "thinking-brain")
+make_recipe_category("lab", catname, "thinking-brain")
 
 make_recipe_category("arithmetic-combinator", catname, "thinking-brain")
 make_recipe_category("decider-combinator", catname, "thinking-brain")
@@ -72,19 +83,21 @@ make_recipe_category("rail-signal", catname, "thinking-brain")
 make_recipe_category("train-stop", catname, "thinking-brain")
 make_recipe_category("rail-chain-signal", catname, "thinking-brain")
 
---make_recipe_category("personal-roboport-equipment", catname, "thinking-brain")
---make_recipe_category("personal-roboport-mk2-equipment", catname, "thinking-brain")
+make_recipe_category("personal-roboport-equipment", catname, "thinking-brain")
+make_recipe_category("personal-roboport-mk2-equipment", catname, "thinking-brain")
 make_recipe_category("defender-capsule", catname, "thinking-brain")
 make_recipe_category("distractor-capsule", catname, "thinking-brain")
 make_recipe_category("destroyer-capsule", catname, "thinking-brain")
 make_recipe_category("radar", catname, "thinking-brain")
 
-make_recipe_category("asteroid-collector", catname, "thinking-brain")
 
 
-make_recipe_category("automation-science-pack", catname, "thinking-brain")
+--make_recipe_category("automation-science-pack", catname, "thinking-brain")
 --make_recipe_category("logistic-science-pack", catname, "thinking-brain")
---make_recipe_category("chemical-science-pack", catname, "thinking-brain")
---make_recipe_category("production-science-pack", catname, "thinking-brain")
+make_recipe_category("chemical-science-pack", catname, "thinking-brain")
+make_recipe_category("production-science-pack", catname, "thinking-brain")
 make_recipe_category("utility-science-pack", catname, "thinking-brain")
 
+
+make_recipe_category("rocket-turret", catname, "thinking-brain")
+make_recipe_category("asteroid-collector", catname, "thinking-brain")
