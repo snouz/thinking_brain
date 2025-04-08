@@ -34,15 +34,14 @@ local function make_recipe_category(recipe, cat_name, new_assembling_machine)
       end
     end
     for _, char in pairs(data.raw["character"]) do
-      if not char.crafting_categories then
-        crafting_categories = {"crafting"}
-      end
-      for _, category in pairs(char.crafting_categories) do
-        if category == original_recipe_cat then
-          if not find_intable(char.crafting_categories, new_cat_name) then
-            table.insert(char.crafting_categories, new_cat_name)
+      if char.crafting_categories then
+        for _, category in pairs(char.crafting_categories) do
+          if category == original_recipe_cat then
+            if not find_intable(char.crafting_categories, new_cat_name) then
+              table.insert(char.crafting_categories, new_cat_name)
+            end
+            break
           end
-          break
         end
       end
     end
