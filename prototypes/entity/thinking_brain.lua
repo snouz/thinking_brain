@@ -401,6 +401,11 @@ data:extend({
 
 
 
+    perceived_performance = {
+      minimum = 0,
+      maximum = 10,
+      performance_to_activity_rate = 1,
+    },
 
 
 

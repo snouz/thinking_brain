@@ -8,7 +8,7 @@ data:extend({
     name = "thinking-brain",
     icon = "__thinking_brain__/graphics/icons/thinking_brain_icon.png",
     subgroup = "production-machine",
-    order = "hb[cloning-vat]",
+    order = "hc[thinking-brain]",
     inventory_move_sound = item_sounds.mechanical_inventory_move,
     pick_sound = item_sounds.mechanical_inventory_pickup,
     drop_sound = item_sounds.mechanical_inventory_move,
