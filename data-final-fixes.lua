@@ -18,40 +18,10 @@ end
 
 local function make_recipe_category(recipe, cat_name, new_assembling_machine)
   if data.raw.recipe[recipe] and data.raw["assembling-machine"][new_assembling_machine] then
-    local assembly = data.raw["assembling-machine"][new_assembling_machine]
-    local original_recipe_cat = data.raw.recipe[recipe].category or "crafting"
-    local new_cat_name = original_recipe_cat .. "-or-" .. cat_name
-    data:extend({{ type = "recipe-category", name = new_cat_name }})
-    data.raw.recipe[recipe].category = new_cat_name
-    for _, machine in pairs(data.raw["assembling-machine"]) do
-      for _, category in pairs(machine.crafting_categories) do
-          if category == original_recipe_cat then
-            if not find_intable(machine.crafting_categories, new_cat_name) then
-              table.insert(machine.crafting_categories, new_cat_name)
-            end
-            break
-          end
-      end
-    end
-    for _, char in pairs(data.raw["character"]) do
-      if char.crafting_categories then
-        for _, category in pairs(char.crafting_categories) do
-          if category == original_recipe_cat then
-            if not find_intable(char.crafting_categories, new_cat_name) then
-              table.insert(char.crafting_categories, new_cat_name)
-            end
-            break
-          end
-        end
-      end
-    end
-    if not data.raw["recipe-category"][new_cat_name] then
-      data:extend({{ type = "recipe-category", name = new_cat_name }})
-    end
-    data.raw.recipe[recipe].category = new_cat_name
-
-    if not find_intable(assembly.crafting_categories, new_cat_name) then
-      table.insert(assembly.crafting_categories, new_cat_name)
+    if data.raw.recipe[recipe].categories then
+      table.insert(data.raw.recipe[recipe].categories, cat_name)
+    else
+      data.raw.recipe[recipe].categories = {"crafting", cat_name}
     end
   end
 end
@@ -59,6 +29,7 @@ end
 local catname = "thinkingbrain"
 
 if mods["Moshine"] then
+
   make_recipe_category("supercomputer", catname, "thinking-brain")
   make_recipe_category("ai-trainer", catname, "thinking-brain")
   make_recipe_category("data-processor", catname, "thinking-brain")

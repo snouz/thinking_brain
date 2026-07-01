@@ -11,7 +11,7 @@ data:extend({
     type = "recipe",
     name = "thinking-brain",
     energy_required = 10,
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     ingredients =
     {
       {type = "item", name = "processing-unit", amount = 10},
